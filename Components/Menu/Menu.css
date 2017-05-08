@@ -1,0 +1,42 @@
+
+#div-menu{
+    height:15%;
+    width: 100%;
+    background-color:lightgray;
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
+
+#img-logo{
+    background-image: url('../../assets/images/logo.png');
+    background-size: cover;
+    width: 120px;
+    height: 81px;
+    margin-top:15px;
+    margin-left:10px;
+}
+
+.verticalLine {
+  border-left: solid #333333;
+  display: inline-block;
+  height: 80%;
+  width: 1px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#img-loupe-voiture{
+    background-image: url('../../assets/images/Loupe-voiture.png');
+    background-size: cover;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    height:75px;
+    width: 75px;
+}
+
+#recherche-user{
+    vertical-align: top;
+    font-size: 3em;
+    width: 60%;
+}

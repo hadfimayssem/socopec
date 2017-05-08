@@ -1,0 +1,16 @@
+#background-connexion{
+    height: 85%;
+    width: 100%;
+    background-color: white;
+}
+
+#div-connexion{
+    width: 400px;
+    height: 350px;
+    background-color: lightgray;
+    position: absolute;
+    top:30%;
+    left:20%;
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
