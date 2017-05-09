@@ -1,0 +1,42 @@
+.rowVehicule{
+    width: 90%;
+    height: 5rem;
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left:5%;
+    font-size: 2rem;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.rowVehicule span{
+    line-height: 5rem;
+    text-overflow: ellipsis;
+}
+
+.identifiant{
+    width: 24%;
+    margin-left: 1%;  
+}
+
+.modele{
+    width: 35%;
+}
+
+.etat{
+    width:30%
+}
+
+.details{
+    width: 3%;
+    height: 50%;
+    background-image: url('../../assets/images/arrow-down-sign-to-navigate.png');
+    background-size: cover;
+}
