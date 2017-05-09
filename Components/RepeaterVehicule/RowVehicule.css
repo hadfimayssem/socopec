@@ -1,4 +1,4 @@
-.rowVehicule{
+[id^=rowVehicule]{
     width: 90%;
     height: 5rem;
     background-color: white;
@@ -15,7 +15,7 @@
     border: 1px solid black;
 }
 
-.rowVehicule span{
+[id^=rowVehicule] span{
     line-height: 5rem;
     text-overflow: ellipsis;
 }
@@ -42,7 +42,7 @@
 
 .volet-details{
     background-color: white;
-    height: 70%;
+    height: 80%;
     width: 82%;
     margin-left: 9%;
     margin-right: 9%;
@@ -56,4 +56,40 @@
     -moz-border-radius-bottomleft: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.toggle-base {
+    height: 80%;
+}
+
+.toggle-enter {
+  animation-name: fade-in;
+  animation-duration: 600ms;
+}
+.toggle-leave {
+  animation-name: fade-out;
+  animation-duration: 600ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 1.0;
+    height: 0%;
+  }
+  to {
+    opacity: 1.0;
+    height: 100%;
+  }
+}
+
+
+@keyframes fade-out {
+  from {
+    opacity: 1.0;
+    height: 80%;
+  }
+  to {
+    opacity: 1.0;
+    height: 0%;
+  }
 }
