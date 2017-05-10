@@ -29,16 +29,23 @@ class RowVehicule extends React.Component {
   onClick() {
     this.setState((prevState, props) => ({
       hidden: !(prevState.hidden)
-    }))   
+    })) 
   }
+
   render() {
+    var arrow;
+    if (this.state.hidden) {
+        arrow =  'details dwn';
+    } else {
+        arrow =  'details up';
+    }
     return (
         <div>
             <div id = {"rowVehicule-"+this.props.cle}>
                 <span className="identifiant"> {this.props.vehicule.id} </span> 
                 <span className="modele"> Modèle: {this.props.vehicule.modele} </span> 
                 <span className="etat"> Statut: {this.props.vehicule.etat} </span>
-                <span className="details" data-id={this.props.cle}  onClick={this.onClick.bind(this)}></span>
+                <span className={arrow} data-id={this.props.cle}  onClick={this.onClick.bind(this)}></span>
             </div>
             <Toggle hidden={this.state.hidden}><VoletDetails /></Toggle>
 
