@@ -6,19 +6,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 require('./RowVehicule.css');
 
 var VoletDetails = require('./VoletDetails.jsx');
+var Toggle = require('../Tools/Toggle/Toggle.jsx');
 
-class Toggle extends React.Component {
-  render() {
-        return <div>
-          <ReactCSSTransitionGroup
-          transitionName="toggle"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}>
-            {this.props.hidden ? null : <div className="toggle-base">{this.props.children}</div>}
-          </ReactCSSTransitionGroup>    
-       </div>
-  }
-}
 class RowVehicule extends React.Component {
   constructor(props) {
     super(props);

@@ -4,6 +4,8 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 
 require('./Menu.css');
 
+var BtAjoutVehicule = require('./BtAjoutVehicule.jsx');
+
 class Menu extends React.Component{
     render(){
         return(
@@ -34,6 +36,7 @@ class MenuAccueilUser extends React.Component{
                 <div className ="verticalLine"></div>
                 <div id="img-loupe-voiture"></div>
                 <input type="text" id="recherche-user" />
+                <BtAjoutVehicule />
             </div>
         );
     }

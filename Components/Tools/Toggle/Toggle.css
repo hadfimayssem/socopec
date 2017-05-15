@@ -1,0 +1,35 @@
+.toggle-base {
+    height: 80%;
+}
+
+.toggle-enter {
+  animation-name: fade-in;
+  animation-duration: 600ms;
+}
+.toggle-leave {
+  animation-name: fade-out;
+  animation-duration: 600ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 1.0;
+    height: 0%;
+  }
+  to {
+    opacity: 1.0;
+    height: 100%;
+  }
+}
+
+
+@keyframes fade-out {
+  from {
+    opacity: 1.0;
+    height: 80%;
+  }
+  to {
+    opacity: 1.0;
+    height: 0%;
+  }
+}

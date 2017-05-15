@@ -40,3 +40,9 @@
     font-size: 3em;
     width: 60%;
 }
+
+#bt-ajout-vehicule{
+    height:100px;
+    width: 100px;
+    background-color: red;
+}
