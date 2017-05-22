@@ -5,6 +5,7 @@
     background-color:lightgray;
     box-sizing: border-box;
     border: 1px solid grey;
+    display: flex;
 }
 
 #img-logo{
@@ -25,7 +26,7 @@
   margin-left: 20px;
 }
 
-#img-loupe-voiture{
+#bt-recherche{
     background-image: url('../../assets/images/Loupe-voiture.png');
     background-size: cover;
     display: inline-block;
@@ -40,9 +41,27 @@
     font-size: 3em;
     width: 60%;
 }
-
+#wrapper-bt-ajout-vehicule{
+    width: 5%;
+    display: initial;
+    margin-left: 2%;
+}
 #bt-ajout-vehicule{
     height:100px;
     width: 100px;
-    background-color: red;
+    background: url('../../assets/images/car.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height:75px;
+    width: 75px;
+}
+
+#ajout-vehicule-overlay{
+    background-color: rgba(45, 45, 45, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

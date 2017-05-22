@@ -1,0 +1,9 @@
+#recherche-avance{
+    width: 250px;
+    height: 250px;
+    background-color:lightgrey;
+    z-index: 100;
+    position: absolute;
+    top:15%;
+    left: 11%;
+}

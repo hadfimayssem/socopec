@@ -3,9 +3,9 @@ var ReactDOM = require('react-dom');
 
 
 var Toggle = require('../Tools/Toggle/Toggle.jsx');
-var AjoutVehicule = require('../AjoutVehicule/AjoutVehicule.jsx');
+var RechercheAvance = require('../RechercheAvance/RechercheAvance.jsx');
 
-class BtAjoutVehicule extends React.Component{
+class BtRecherche extends React.Component{
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
@@ -20,16 +20,14 @@ class BtAjoutVehicule extends React.Component{
     
     render(){
         return(
-            <div id="wrapper-bt-ajout-vehicule">
-                <div id="bt-ajout-vehicule" onClick={this.onClick.bind(this)}> </div>
+            <div id="wrapper-bt-recherche">
+                <div id="bt-recherche" onClick={this.onClick.bind(this)}> </div>
                 <Toggle hidden={this.state.hidden}>
-                    <div id='ajout-vehicule-overlay'>
-                        <AjoutVehicule closePopup={this.onClick} />
-                    </div>
+                        <RechercheAvance closeRecherche={this.onClick} />
                 </Toggle>
             </div>
         )
     }
 }
 
-module.exports = BtAjoutVehicule;
+module.exports = BtRecherche;
