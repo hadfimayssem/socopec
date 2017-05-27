@@ -5,7 +5,10 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 require('./Menu.css');
 
 var BtAjoutVehicule = require('./BtAjoutVehicule.jsx');
+var BtAjout = require('./BtAjout.jsx');
+
 var BtRecherche = require('./BtRecherche.jsx');
+var BtRechercheAdmin = require('./BtRechercheAdmin.jsx');
 
 class Menu extends React.Component{
     render(){
@@ -13,6 +16,7 @@ class Menu extends React.Component{
             <Router history={hashHistory}>
                 <Route path='/' component={MenuConnexion} />
                 <Route path='/accueil' component={MenuAccueilUser} />
+                <Route path='/administration' component={MenuAccueilAdmin} />
             </Router>
         )
     }
@@ -49,10 +53,10 @@ class MenuAccueilAdmin extends React.Component{
         return(
             <div id="div-menu">
                 <Link to='/' style={{display: 'inline-block'}}><div id="img-logo"></div></Link> 
-                <div className ="verticalLine"></div>
-                <BtRecherche />
+               <div className ="verticalLine"></div>
+               <BtRechercheAdmin />
                 <input type="text" id="recherche-user" />
-                <BtAjoutVehicule />
+                <BtAjout />
                 <Link to='/' style={{display: 'inline-block'}}><div id="bt-user"></div></Link>
             </div>
         );

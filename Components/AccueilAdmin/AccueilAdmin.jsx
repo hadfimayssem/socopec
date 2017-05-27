@@ -3,18 +3,18 @@ var ReactDOM = require('react-dom');
 
 var RepeaterVehicule = require('../RepeaterVehicule/RepeaterVehicule.jsx');
 
-require('./AccueilUser.css');
+require('./AccueilAdmin.css');
 
-class AccueilUser extends React.Component{
+class AccueilAdmin extends React.Component{
     render () {
         return (
             <div className="Accueil-backgound">
-                <RepeaterVehicule data={VEHICULES}/>
+                <RepeaterVehicule data={DATA} />
             </div>
         );
     }
 }
-var VEHICULES = [
+var DATA = [
   {id: 'XX6YT', modele: 'Citroene', etat: 'Loue'},
   {id: 'PTZD8', modele: 'Opel', etat: 'Garage'},
   {id: 'DS87T', modele: 'Peugeot', etat: 'Loue'},
@@ -23,4 +23,5 @@ var VEHICULES = [
   {id: 'DORK3', modele: 'Renault', etat: 'En attente'}
 ];
 
-module.exports = AccueilUser;
+
+module.exports = AccueilAdmin;
