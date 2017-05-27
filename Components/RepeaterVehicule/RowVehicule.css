@@ -52,12 +52,12 @@
 
 .volet-details{
     background-color: white;
-    height: 80%;
+    height: 430px;
     width: 82%;
     margin-left: 9%;
     margin-right: 9%;
 
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     border: 1px solid black;    
 
     -webkit-border-bottom-right-radius: 10px;

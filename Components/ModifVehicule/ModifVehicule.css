@@ -1,0 +1,24 @@
+
+#modif-vehicule{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background-color: white;
+    z-index: 1000;
+}
+#modif-valider{
+    background: url('../../assets/images/checked.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}
+#modif-annuler{
+    background: url('../../assets/images/unchecked.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}

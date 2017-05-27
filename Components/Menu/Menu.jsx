@@ -38,6 +38,7 @@ class MenuAccueilUser extends React.Component{
                 <BtRecherche />
                 <input type="text" id="recherche-user" />
                 <BtAjoutVehicule />
+                <Link to='/' style={{display: 'inline-block'}}><div id="bt-user"></div></Link>
             </div>
         );
     }

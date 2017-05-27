@@ -16,7 +16,13 @@
     margin-top:15px;
     margin-left:10px;
 }
-
+#bt-user{
+    height:80px;
+    width: 80px;
+    background: url('../../assets/images/user.png');
+    background-size: cover;
+    margin-left: 50px;
+}
 .verticalLine {
   border-left: solid #333333;
   display: inline-block;

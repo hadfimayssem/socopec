@@ -4,11 +4,11 @@
 
 .toggle-enter {
   animation-name: fade-in;
-  animation-duration: 600ms;
+  animation-duration: 200ms;
 }
 .toggle-leave {
   animation-name: fade-out;
-  animation-duration: 600ms;
+  animation-duration: 200ms;
 }
 
 @keyframes fade-in {
