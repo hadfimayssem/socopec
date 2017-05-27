@@ -44,4 +44,18 @@ class MenuAccueilUser extends React.Component{
     }
 }
 
+class MenuAccueilAdmin extends React.Component{
+    render(){
+        return(
+            <div id="div-menu">
+                <Link to='/' style={{display: 'inline-block'}}><div id="img-logo"></div></Link> 
+                <div className ="verticalLine"></div>
+                <BtRecherche />
+                <input type="text" id="recherche-user" />
+                <BtAjoutVehicule />
+                <Link to='/' style={{display: 'inline-block'}}><div id="bt-user"></div></Link>
+            </div>
+        );
+    }
+}
 module.exports = Menu;
