@@ -37,8 +37,8 @@
 }
 
 .details{
-    width: 3%;
-    height: 50%;
+    width: 20px;
+    height: 20px;
     background-image: url('../../assets/images/arrow-down-sign-to-navigate.png');
     background-size: cover;
 }

@@ -1,12 +1,11 @@
 
 #modif-vehicule{
-    width: 80%;
+   width: 60%;
     height: 80%;
-    position: absolute;
-    top: 10%;
-    left: 10%;
+    margin: 75px auto;
     background-color: white;
     z-index: 1000;
+    padding: 25px;
 }
 #modif-valider{
     background: url('../../assets/images/checked.png');
@@ -21,4 +20,39 @@
     background-repeat: no-repeat;
     height: 50px;
     width: 50px;
+}
+#modif-vehicule > form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#modif-vehicule > form > *{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 20px;
+}
+#modif-vehicule h2{
+    color: #344C85;
+    margin-bottom: 15px;
+}
+#modif-vehicule > .buttons{
+    text-align: right;
+}
+#modif-valider{
+    background: url('../../assets/images/checked.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+}
+#modif-annuler{
+    background: url('../../assets/images/unchecked.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+    margin-right: 50px;
+    display: inline-block;
+    margin-left: 15px;
 }

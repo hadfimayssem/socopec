@@ -1,19 +1,47 @@
 #recherche-avance-admin{
     width: 300px;
-    height: 325px;
-    background-color:lightgrey;
     z-index: 100;
     position: absolute;
-    top:15%;
+    top:110px;
     left: 11%;
+    background-color: white;
+    border: 1px solid black;
 }
-
+#wrapper-recherche-bt{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#body-recherche > *{
+  padding: 15px;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+#body-recherche input,
+#body-recherche label,
+#body-recherche select{
+  width: 50%;
+  margin-top: 15px;
+  padding: 5px;
+}
+#body-recherche .input-range{
+  margin-top: 25px;
+  width: 100%;
+}
+#body-recherche h2{
+  color: #344C85;
+  margin-bottom: 10px;  
+}
 [id^=recherche-bt-]{
-   height:60px;
-   width: 60px;
-   margin-left: 5px;
-   margin-right: 5px;
-   padding-left: 10px;
+   background-repeat: no-repeat;
+   background-size: 90% 90%;
+   width: 25%;
+   height: 60px;
+   padding: 5px;
+   background-position: center;
+   border: 1px solid black;
+   background-color: #C5B936;
 }
 #wrapper-recherche-bt{
     display:flex;
@@ -21,22 +49,17 @@
 }
 #recherche-bt-vehicule{
     background-image: url('../../assets/images/car.png');
-    background-size: cover;
 }
 #recherche-bt-agent{
     background-image: url('../../assets/images/user.png');
-    background-size: cover;
 }
 #recherche-bt-agence{
     background-image: url('../../assets/images/home.png');
-    background-size: cover;
 }
 #recherche-bt-etat{
     background-image: url('../../assets/images/key.png');
-    background-size: cover;
 }
-
 .active{
-    border-radius: 5px;
     background-color: white;
-}
+    border-bottom: none;
+  }
