@@ -11,9 +11,31 @@
 [id^=recherche-bt-]{
    height:60px;
    width: 60px;
-   margin-left: 10px;
-   background-color: lightblue; 
+   margin-left: 5px;
+   margin-right: 5px;
+   padding-left: 10px;
 }
 #wrapper-recherche-bt{
     display:flex;
+}
+#recherche-bt-vehicule{
+    background-image: url('../../assets/images/car.png');
+    background-size: cover;
+}
+#recherche-bt-agent{
+    background-image: url('../../assets/images/user.png');
+    background-size: cover;
+}
+#recherche-bt-agence{
+    background-image: url('../../assets/images/home.png');
+    background-size: cover;
+}
+#recherche-bt-etat{
+    background-image: url('../../assets/images/key.png');
+    background-size: cover;
+}
+
+.active{
+    border-radius: 5px;
+    background-color: white;
 }
