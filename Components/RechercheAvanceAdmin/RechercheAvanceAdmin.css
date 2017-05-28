@@ -1,9 +1,19 @@
-#recherche-avance{
-    width: 250px;
-    height: 250px;
+#recherche-avance-admin{
+    width: 300px;
+    height: 325px;
     background-color:lightgrey;
     z-index: 100;
     position: absolute;
     top:15%;
     left: 11%;
+}
+
+[id^=recherche-bt-]{
+   height:60px;
+   width: 60px;
+   margin-left: 10px;
+   background-color: lightblue; 
+}
+#wrapper-recherche-bt{
+    display:flex;
 }
