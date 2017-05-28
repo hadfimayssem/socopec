@@ -22,7 +22,7 @@ class RechercheAvance extends React.Component{
     render(){
         return(
                 <div id='recherche-avance'>
-                    <div>Recherche Avancée</div>
+                    <h2>Recherche Avancée</h2>
                     <label htmlFor="recherche-modele">Modèle:</label>
                     <select name="recherche-modele">
                         <option value="volvo">Volvo</option>

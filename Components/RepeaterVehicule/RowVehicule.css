@@ -1,10 +1,14 @@
 [id^=rowVehicule]{
     width: 90%;
-    height: 5rem;
     background-color: white;
     margin-top: 2%;
     margin-left:5%;
-    font-size: 2rem;
+    font-size: 20px;
+    background-color: #344C85;
+    padding: 15px;
+    box-shadow: 5px;
+
+    color: white;
 
     display: flex;
     flex-wrap: nowrap;
@@ -16,7 +20,6 @@
 }
 
 [id^=rowVehicule] span{
-    line-height: 5rem;
     text-overflow: ellipsis;
 }
 
@@ -40,6 +43,7 @@
     background-size: cover;
 }
 
+
 .dwn{    
     transform: rotate(0deg);
     /*transition: transform 300ms linear;*/
@@ -49,7 +53,6 @@
   transform: rotate(180deg);
   /*transition: transform 300ms linear;*/
 }
-
 .volet-details{
     background-color: white;
     height: 430px;

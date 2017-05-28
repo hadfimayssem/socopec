@@ -1,0 +1,11 @@
+body{
+    font-family: arial;
+    background-image: url(../assets/images/background.jpg);
+    background-position: center;
+}
+*{
+    box-sizing: border-box;
+}
+.identifiant{
+	color: #C5B936;
+}

@@ -6,4 +6,10 @@
     position: absolute;
     top:15%;
     left: 11%;
+    padding: 15px;
+}
+#recherche-avance h2{
+	font-size: 15px;
+	color: #344C85;
+	margin-bottom: 15px;
 }

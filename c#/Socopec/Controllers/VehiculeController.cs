@@ -175,7 +175,7 @@ namespace Socopec.Controllers
                 {
                     mySQLReader.Close();
 
-                    sqlString = "UPDATE Vehicule SET IdVehicule ='" + v.id + "', Modele_Modele ='" + v.modele + "', DateFabrication ='" + v.dateFabrication.ToString("YYYY-MM-dd") + "', Etat_Statut = '" + v.statut + "', Agence_Lieu = '" + v.lieu + "', Archive ='" + v.archive + "'WHERE id ='" + id;
+                    sqlString = "UPDATE Vehicule SET IdVehicule ='" + v.id + "', Modele_Modele ='" + v.modele + "', DateFabrication ='" + v.dateFabrication.ToString("YYYY-MM-dd") + "', Etat_Statut = '" + v.statut + "', Agence_Lieu = '" + v.lieu + "', Archive ='" + v.archive + "' WHERE id ='" + id;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;

@@ -1,24 +1,44 @@
 
 #ajout-vehicule{
-    width: 80%;
+    width: 60%;
     height: 80%;
-    position: absolute;
-    top: 10%;
-    left: 10%;
+    margin: 75px auto;
     background-color: white;
     z-index: 1000;
+    padding: 25px;
+}
+#ajout-vehicule > form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#ajout-vehicule > form > *{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 20px;
+}
+#ajout-vehicule h2{
+    color: #344C85;
+    margin-bottom: 15px;
+}
+#ajout-vehicule > .buttons{
+    text-align: right;
+    display: flex;
 }
 #ajout-valider{
     background: url('../../assets/images/checked.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
+    float: right;
 }
 #ajout-annuler{
     background: url('../../assets/images/unchecked.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
+    float: right;
+    margin-right: 50px;
 }

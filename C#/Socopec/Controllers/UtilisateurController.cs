@@ -173,7 +173,7 @@ namespace Socopec.Controllers
                 {
                     mySQLReader.Close();
 
-                    sqlString = "UPDATE Utilisateur SET Login ='" + u.login + "', Password ='" + u.password + "', Role = '" + u.role + "', Agence_Lieu = '" + u.lieu + "', UtilisateurArchive ='" + u.archive + "'WHERE Login ='" + login;
+                    sqlString = "UPDATE Utilisateur SET Login ='" + u.login + "', Password ='" + u.password + "', Role = '" + u.role + "', Agence_Lieu = '" + u.lieu + "', UtilisateurArchive ='" + u.archive + "' WHERE Login ='" + login;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;

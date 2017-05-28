@@ -14,8 +14,8 @@ class Connexion extends React.Component{
                     </h1>
 
                         <form action="/action_page.php">
-                        Identifiant: <input type="text" name="login" /><br />
-                        Mot de passe: <input type="text" name="mdp" /><br />
+                        <input placeholder="Identifiant" type="text" name="login" /><br />
+                        <input type="text" name="mdp" type="password" /><br />
                         <Link to='/accueil'>connexion1</Link>
                         <Link to='/administration'>connexion2</Link>
                     </form>

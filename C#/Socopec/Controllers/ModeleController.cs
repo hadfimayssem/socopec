@@ -11,40 +11,40 @@ using Socopec;
 
 namespace Socopec.Controllers
 {
-    public class AgenceController : ApiController
+    public class ModeleController : ApiController
     {
-        // GET: api/Agence
+        // GET: api/Modele
         public ArrayList Get()
         {
-            AgencePersistance ap = new AgencePersistance();
-            return ap.getAgences();
+            ModelePersistance mp = new ModelePersistance();
+            return mp.getModeles();
         }
 
-        // GET: api/Agence/Tokyo
-        public Agence Get(string lieu)
+        // GET: api/Modele/c3
+        public Modele Get(string nom)
         {
-            AgencePersistance ap = new AgencePersistance();
-            Agence a = ap.getAgence(lieu);
-            return a;
+            ModelePersistance mp = new ModelePersistance();
+            Modele m = mp.getModele(nom);
+            return m;
         }
 
-        // POST: api/Agence
-        public HttpResponseMessage Post([FromBody]Agence value)
+        // POST: api/Modele
+        public HttpResponseMessage Post([FromBody]Modele value)
         {
-            AgencePersistance ap = new AgencePersistance();
+            ModelePersistance mp = new ModelePersistance();
             long id;
-            id = ap.saveAgence(value);
+            id = mp.saveModele(value);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
-            response.Headers.Location = new Uri(Request.RequestUri, String.Format("Agence/{0}", id));
+            response.Headers.Location = new Uri(Request.RequestUri, String.Format("Modele/{0}", id));
             return response;
         }
 
-        // PUT: api/Agence/Tokyo
-        public HttpResponseMessage Put(string lieu, [FromBody]Agence value)
+        // PUT: api/Modele/C3
+        public HttpResponseMessage Put(string nom, [FromBody]Modele value)
         {
-            AgencePersistance ap = new AgencePersistance();
+            ModelePersistance mp = new ModelePersistance();
             bool recordExist = false;
-            recordExist = ap.updateAgence(lieu, value);
+            recordExist = mp.updateModele(nom, value);
 
             HttpResponseMessage response;
             if (recordExist)
@@ -54,12 +54,12 @@ namespace Socopec.Controllers
             return response;
         }
 
-        // DELETE: api/Agence/Tokyo
-        public HttpResponseMessage Delete(string lieu)
+        // DELETE: api/Modele/C3
+        public HttpResponseMessage Delete(string nom)
         {
-            AgencePersistance ap = new AgencePersistance();
+            ModelePersistance mp = new ModelePersistance();
             bool recordExist = false;
-            recordExist = ap.deleteAgence(lieu);
+            recordExist = mp.deleteModele(nom);
 
             HttpResponseMessage response;
             if (recordExist)
@@ -69,11 +69,11 @@ namespace Socopec.Controllers
             return response;
         }
 
-        public class AgencePersistance
+        public class ModelePersistance
         {
             private MySql.Data.MySqlClient.MySqlConnection conn;
 
-            public AgencePersistance()
+            public ModelePersistance()
             {
                 string myConnectionString;
                 myConnectionString = "SERVER=127.0.0.1; DATABASE=socopec; UID=root; PASSWORD=rootroot";
@@ -87,66 +87,74 @@ namespace Socopec.Controllers
                 { }
             }
 
-            public ArrayList getAgences()
+            public ArrayList getModeles()
             {
-                ArrayList AgenceArray = new ArrayList();
+                ArrayList modeleArray = new ArrayList();
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence";
+                string sqlString = "SELECT * FROM Modele";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
                 while (mySQLReader.Read())
                 {
-                    Agence a = new Agence();
-                    a.lieu = mySQLReader.GetString(0);
-                    a.archive = mySQLReader.GetString(1);
-                    AgenceArray.Add(a);
+                    Modele m = new Modele();
+                    m.nom = mySQLReader.GetString(0);
+                    m.hauteur = mySQLReader.GetInt32(1);
+                    m.largeur = mySQLReader.GetInt32(2);
+                    m.poids = mySQLReader.GetInt32(3);
+                    m.puissance = mySQLReader.GetInt32(4);
+                    m.archive = mySQLReader.GetInt32(5);
+                    modeleArray.Add(m);
                 }
-                return AgenceArray;
+                return modeleArray;
             }
 
-            public Agence getAgence(string lieu)
+            public Modele getModele(string nom)
             {
-                Agence a = new Agence();
+                Modele m = new Modele();
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence WHERE Lieu = " + lieu;
+                string sqlString = "SELECT * FROM Modele WHERE Modele = " + nom;
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
                 if (mySQLReader.Read())
                 {
-                    a.lieu = mySQLReader.GetString(0);
-                    a.archive = mySQLReader.GetString(1);
-                    return a;
+                    m.nom = mySQLReader.GetString(0);
+                    m.hauteur = mySQLReader.GetInt32(1);
+                    m.largeur = mySQLReader.GetInt32(2);
+                    m.poids = mySQLReader.GetInt32(3);
+                    m.puissance = mySQLReader.GetInt32(4);
+                    m.archive = mySQLReader.GetInt32(5);
+                    return m;
                 }
                 else
                     return null;
             }
 
-            public long saveAgence(Agence agenceToSave)
+            public long saveModele(Modele modeleToSave)
             {
-                String sqlString = "INSERT INTO Agence (Lieu, LieuArchive) VALUES ('" + agenceToSave.lieu + "','" + agenceToSave.archive + "')'";
+                String sqlString = "INSERT INTO Modele (Modele, Hauteur, Largeur, Poids, Puissance, ModeleArchive) VALUES ('" + modeleToSave.nom + "','" + modeleToSave.hauteur + "','" + modeleToSave.largeur + "','" + modeleToSave.poids + "','" + modeleToSave.puissance + "','" + modeleToSave.archive + "')'";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                 cmd.ExecuteNonQuery();
                 long id = cmd.LastInsertedId;
                 return id;
             }
 
-            public bool deleteAgence(string lieu)
+            public bool deleteModele(string nom)
             {
-                Agence a = new Agence();
+                Modele m = new Modele();
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence WHERE Lieu = " + lieu;
+                string sqlString = "SELECT * FROM Modele WHERE Modele = " + nom;
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
                 if (mySQLReader.Read())
                 {
                     mySQLReader.Close();
-                    sqlString = "DELETE FROM Agence WHERE Lieu = " + lieu;
+                    sqlString = "DELETE FROM Modele WHERE WHERE Modele = " + nom;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;
@@ -155,11 +163,11 @@ namespace Socopec.Controllers
                     return false;
             }
 
-            public bool updateAgence(string lieu, Agence a)
+            public bool updateModele(string nom, Modele m)
             {
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence WHERE Lieu = " + lieu;
+                string sqlString = "SELECT * FROM Vehicule WHERE ID = " + nom;
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
@@ -167,7 +175,7 @@ namespace Socopec.Controllers
                 {
                     mySQLReader.Close();
 
-                    sqlString = "UPDATE Agence SET Lieu ='" + a.lieu + "', LieuArchive ='" + a.archive + "' WHERE LieuArchive = '" + lieu;
+                    sqlString = "UPDATE Modele SET Modele ='" + m.nom + "', Hauteur ='" + m.hauteur + "', Largeur ='" + m.largeur + "', Poids = '" + m.poids + "', Puissance = '" + m.puissance + "', Archive ='" + m.archive + "' WHERE Modele ='" + nom;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;
