@@ -70,7 +70,7 @@ class RechercheAvanceAdmin extends React.Component{
             activeEtat = "";
             bodyRecherche = (
                 <div id='recherche-avance-vehicule'>
-                        <div>Recherche Avancée</div>
+                        <h2>Recherche Avancée</h2>
                         <label htmlFor="recherche-modele">Modèle:</label>
                         <select name="recherche-modele">
                             <option value="volvo">Volvo</option>
@@ -107,7 +107,7 @@ class RechercheAvanceAdmin extends React.Component{
             activeEtat = "";
             bodyRecherche = (
                 <div id='recherche-avance-agent'>
-                        <div>Recherche Avancée</div>
+                        <h2>Recherche Avancée</h2>
                         <label htmlFor="recherche-modele">Identifiant: </label>
                         <input type="text" name="id"></input>
                         <label htmlFor="recherche-modele">Nom: </label>
@@ -130,7 +130,7 @@ class RechercheAvanceAdmin extends React.Component{
             activeEtat = "";
             bodyRecherche = (
                 <div id='recherche-avance-agence'>
-                        <div>Recherche Avancée</div>
+                        <h2>Recherche Avancée</h2>
                         <label htmlFor="recherche-modele">Identifiant: </label>
                         <input type="text" name="id"></input>
                         <label htmlFor="recherche-modele">Nom: </label>
@@ -146,7 +146,7 @@ class RechercheAvanceAdmin extends React.Component{
             activeEtat = "active";
             bodyRecherche = (
                 <div id='recherche-avance-etat'>
-                        <div>Recherche Avancée</div>
+                        <h2>Recherche Avancée</h2>
                         <label htmlFor="recherche-modele">Identifiant: </label>
                         <input type="text" name="id"></input>
                         <label htmlFor="recherche-modele">Nom: </label>
@@ -163,7 +163,9 @@ class RechercheAvanceAdmin extends React.Component{
                         <div id='recherche-bt-agence' className={activeAgence} onClick={this.clickChangeActiveAgence.bind(this)}></div>
                         <div id='recherche-bt-etat' className={activeEtat} onClick={this.clickChangeActiveEtat.bind(this)}></div>
                     </div>
-                    {bodyRecherche}
+                    <div id="body-recherche">
+                        {bodyRecherche}
+                    </div>
                 </div>
         )
     }

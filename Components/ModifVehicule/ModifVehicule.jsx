@@ -20,17 +20,21 @@ class ModifVehicule extends React.Component{
     render(){
         return(
                 <div id='modif-vehicule' >
-                    <div>Modification véhicule</div>
-                    <label htmlFor="modif-date-fabrication">Date de frabrication:</label>
-                    <input id="modif-date-fabrication" type="date" />    
-                    <label htmlFor="modif-hauteur">Largeur:</label>
-                    <input id="modif-hauter" type="text" />   
-                    <label htmlFor="modif-poids">Poids:</label>
-                    <input id="modif-poids" type="text" />   
-                    <label htmlFor="modif-puissance">Puissance:</label>
-                    <input id="modif-puissace" type="text" />  
-                    <div id="modif-valider" onClick = {this.validerModif.bind(this)}></div>
-                    <div id="modif-annuler" onClick = {this.annulerModif.bind(this)}></div>    
+                    <h2>Modification véhicule</h2>
+                    <form>
+                        <label htmlFor="modif-date-fabrication">Date de frabrication:</label>
+                        <input id="modif-date-fabrication" type="date" />    
+                        <label htmlFor="modif-hauteur">Largeur:</label>
+                        <input id="modif-hauter" type="text" />   
+                        <label htmlFor="modif-poids">Poids:</label>
+                        <input id="modif-poids" type="text" />   
+                        <label htmlFor="modif-puissance">Puissance:</label>
+                        <input id="modif-puissace" type="text" />  
+                    </form>
+                    <div className="buttons">
+                        <div id="modif-valider" onClick = {this.validerModif.bind(this)}></div>
+                        <div id="modif-annuler" onClick = {this.annulerModif.bind(this)}></div>
+                    </div>
                 </div>
         )
     }

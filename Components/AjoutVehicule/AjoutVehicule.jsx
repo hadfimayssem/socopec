@@ -31,7 +31,7 @@ class AjoutVehicule extends React.Component{
                         <label htmlFor="ajout-puissance">Puissance:</label>
                         <input id="ajout-puissace" type="text" />  
                     </form>
-                    <div class="buttons">
+                    <div className="buttons">
                         <div id="ajout-valider" onClick = {this.validerAjout.bind(this)}></div>
                         <div id="ajout-annuler" onClick = {this.annulerAjout.bind(this)}></div>
                     </div>
