@@ -15,12 +15,12 @@ class AccueilUser extends React.Component{
     }
 }
 var VEHICULES = [
-  {id: 'XX6YT', modele: 'Citroene', etat: 'Loue'},
-  {id: 'PTZD8', modele: 'Opel', etat: 'Garage'},
-  {id: 'DS87T', modele: 'Peugeot', etat: 'Loue'},
-  {id: 'RRSQP', modele: 'Fiesta', etat: 'En reparation'},
-  {id: 'H13RE', modele: 'Ferari', etat: 'Garage'},
-  {id: 'DORK3', modele: 'Renault', etat: 'En attente'}
+  {type: "vehicule", id: 'XX6YT', modele: 'Citroene', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "aspirateur", lieux:"nancy" },
+  {type: "vehicule", id: 'PTZD8', modele: 'Opel', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "aspirateur", lieux:"nancy"},
+  {type: "vehicule", id: 'DS87T', modele: 'Peugeot', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "aspirateur", lieux:"nancy"},
+  {type: "vehicule", id: 'RRSQP', modele: 'Fiesta', etat: 'En reparation', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "aspirateur", lieux:"nancy"},
+  {type: "vehicule", id: 'H13RE', modele: 'Ferari', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "aspirateur", lieux:"nancy"},
+  {type: "vehicule", id: 'DORK3', modele: 'Renault', etat: 'En attente', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "aspirateur", lieux:"nancy"}
 ];
 
 module.exports = AccueilUser;

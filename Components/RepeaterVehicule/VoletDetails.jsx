@@ -23,14 +23,14 @@ class VoletDetails extends React.Component{
                 <div className="wrapper-details">
                     <div className="details-img"></div>
                     <div className="details-infos">
-                        <div className="details-fabrication">Fabrication: {this.props.fabrication} </div>
-                        <div className="details-hauteur">Hauteur: {this.props.hauteur} </div>
-                        <div className="details-largeur">Largeur: {this.props.largeur} </div>
+                        <div className="details-fabrication">Fabrication: {this.props.data.fabrication} </div>
+                        <div className="details-hauteur">Hauteur: {this.props.data.hauteur} m </div>
+                        <div className="details-largeur">Largeur: {this.props.data.largeur} m </div>
                     </div>
                     <div className="details-infos">
-                        <div className="details-poids">Poids: {this.props.poids} </div>
-                        <div className="details-puissance">Puissance: {this.props.puissance} </div>
-                        <div className="details-lieux">Lieux: {this.props.lieux} </div>
+                        <div className="details-poids">Poids: {this.props.data.poids} t </div>
+                        <div className="details-puissance">Puissance: {this.props.data.puissance} </div>
+                        <div className="details-lieux">Lieux: {this.props.data.lieux} </div>
                     </div>
                     <div className="details-buttons">
                         <div className="details-edit" onClick={this.onClick.bind(this)}></div>
