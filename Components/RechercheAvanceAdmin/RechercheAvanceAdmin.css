@@ -17,6 +17,7 @@
 }
 #wrapper-recherche-bt{
     display:flex;
+    margin-bottom: 10px;
 }
 #recherche-bt-vehicule{
     background-image: url('../../assets/images/car.png');
