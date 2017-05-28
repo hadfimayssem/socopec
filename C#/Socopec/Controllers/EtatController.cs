@@ -167,7 +167,7 @@ namespace Socopec.Controllers
                 {
                     mySQLReader.Close();
 
-                    sqlString = "UPDATE Etat SET Statut ='" + e.statut + "', EtatArchive ='" + e.archive;
+                    sqlString = "UPDATE Etat SET Statut ='" + e.statut + "', EtatArchive ='" + e.archive + "' WHERE Statut = '" + statut;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;

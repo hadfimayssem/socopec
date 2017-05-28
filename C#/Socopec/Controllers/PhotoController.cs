@@ -11,40 +11,40 @@ using Socopec;
 
 namespace Socopec.Controllers
 {
-    public class AgenceController : ApiController
+    public class PhotoController : ApiController
     {
-        // GET: api/Agence
+        // GET: api/Photo
         public ArrayList Get()
         {
-            AgencePersistance ap = new AgencePersistance();
-            return ap.getAgences();
+            PhotoPersistance pp = new PhotoPersistance();
+            return pp.getPhotos();
         }
 
-        // GET: api/Agence/Tokyo
-        public Agence Get(string lieu)
+        // GET: api/Photo/C3.png
+        public Photo Get(string url)
         {
-            AgencePersistance ap = new AgencePersistance();
-            Agence a = ap.getAgence(lieu);
-            return a;
+            PhotoPersistance pp = new PhotoPersistance();
+            Photo p = pp.getPhoto(url);
+            return p;
         }
 
-        // POST: api/Agence
-        public HttpResponseMessage Post([FromBody]Agence value)
+        // POST: api/Photo
+        public HttpResponseMessage Post([FromBody]Photo value)
         {
-            AgencePersistance ap = new AgencePersistance();
+            PhotoPersistance pp = new PhotoPersistance();
             long id;
-            id = ap.saveAgence(value);
+            id = pp.savePhoto(value);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
-            response.Headers.Location = new Uri(Request.RequestUri, String.Format("Agence/{0}", id));
+            response.Headers.Location = new Uri(Request.RequestUri, String.Format("Etat/{0}", id));
             return response;
         }
 
-        // PUT: api/Agence/Tokyo
-        public HttpResponseMessage Put(string lieu, [FromBody]Agence value)
+        // PUT: api/Photo/C3.png
+        public HttpResponseMessage Put(string url, [FromBody]Photo value)
         {
-            AgencePersistance ap = new AgencePersistance();
+            PhotoPersistance pp = new PhotoPersistance();
             bool recordExist = false;
-            recordExist = ap.updateAgence(lieu, value);
+            recordExist = pp.updatePhoto(url, value);
 
             HttpResponseMessage response;
             if (recordExist)
@@ -54,12 +54,12 @@ namespace Socopec.Controllers
             return response;
         }
 
-        // DELETE: api/Agence/Tokyo
-        public HttpResponseMessage Delete(string lieu)
+        // DELETE: api/Photo/C3.png
+        public HttpResponseMessage Delete(string url)
         {
-            AgencePersistance ap = new AgencePersistance();
+            PhotoPersistance pp = new PhotoPersistance();
             bool recordExist = false;
-            recordExist = ap.deleteAgence(lieu);
+            recordExist = pp.deletePhoto(url);
 
             HttpResponseMessage response;
             if (recordExist)
@@ -69,11 +69,11 @@ namespace Socopec.Controllers
             return response;
         }
 
-        public class AgencePersistance
+        public class PhotoPersistance
         {
             private MySql.Data.MySqlClient.MySqlConnection conn;
 
-            public AgencePersistance()
+            public PhotoPersistance()
             {
                 string myConnectionString;
                 myConnectionString = "SERVER=127.0.0.1; DATABASE=socopec; UID=root; PASSWORD=rootroot";
@@ -87,66 +87,66 @@ namespace Socopec.Controllers
                 { }
             }
 
-            public ArrayList getAgences()
+            public ArrayList getPhotos()
             {
-                ArrayList AgenceArray = new ArrayList();
+                ArrayList EtatArray = new ArrayList();
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence";
+                string sqlString = "SELECT * FROM Photo";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
                 while (mySQLReader.Read())
                 {
-                    Agence a = new Agence();
-                    a.lieu = mySQLReader.GetString(0);
-                    a.archive = mySQLReader.GetString(1);
-                    AgenceArray.Add(a);
+                    Photo p = new Photo();
+                    p.idVehicule = mySQLReader.GetString(0);
+                    p.url = mySQLReader.GetString(1);
+                    EtatArray.Add(p);
                 }
-                return AgenceArray;
+                return EtatArray;
             }
 
-            public Agence getAgence(string lieu)
+            public Photo getPhoto(string url)
             {
-                Agence a = new Agence();
+                Photo p = new Photo();
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence WHERE Lieu = " + lieu;
+                string sqlString = "SELECT * FROM Photo WHERE Url = " + url;
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
                 if (mySQLReader.Read())
                 {
-                    a.lieu = mySQLReader.GetString(0);
-                    a.archive = mySQLReader.GetString(1);
-                    return a;
+                    p.idVehicule = mySQLReader.GetString(0);
+                    p.url = mySQLReader.GetString(1);
+                    return p;
                 }
                 else
                     return null;
             }
 
-            public long saveAgence(Agence agenceToSave)
+            public long savePhoto(Photo photoToSave)
             {
-                String sqlString = "INSERT INTO Agence (Lieu, LieuArchive) VALUES ('" + agenceToSave.lieu + "','" + agenceToSave.archive + "')'";
+                String sqlString = "INSERT INTO Photo (IdVehicule, Url) VALUES ('" + photoToSave.idVehicule + "','" + photoToSave.url + "')'";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                 cmd.ExecuteNonQuery();
                 long id = cmd.LastInsertedId;
                 return id;
             }
 
-            public bool deleteAgence(string lieu)
+            public bool deletePhoto(string url)
             {
-                Agence a = new Agence();
+                Photo p = new Photo();
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence WHERE Lieu = " + lieu;
+                string sqlString = "SELECT * FROM Photo WHERE Url = " + url;
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
                 if (mySQLReader.Read())
                 {
                     mySQLReader.Close();
-                    sqlString = "DELETE FROM Agence WHERE Lieu = " + lieu;
+                    sqlString = "DELETE FROM Photo WHERE Url = " + url;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;
@@ -155,11 +155,11 @@ namespace Socopec.Controllers
                     return false;
             }
 
-            public bool updateAgence(string lieu, Agence a)
+            public bool updatePhoto(string url, Photo p)
             {
                 MySql.Data.MySqlClient.MySqlDataReader mySQLReader = null;
 
-                string sqlString = "SELECT * FROM Agence WHERE Lieu = " + lieu;
+                string sqlString = "SELECT * FROM Photo WHERE Url = " + url;
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
 
                 mySQLReader = cmd.ExecuteReader();
@@ -167,7 +167,7 @@ namespace Socopec.Controllers
                 {
                     mySQLReader.Close();
 
-                    sqlString = "UPDATE Agence SET Lieu ='" + a.lieu + "', LieuArchive ='" + a.archive + "' WHERE LieuArchive = '" + lieu;
+                    sqlString = "UPDATE Photo SET IdVehicule ='" + p.idVehicule + "', Url ='" + p.url + "' WHERE Url = '" + url;
                     cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                     cmd.ExecuteNonQuery();
                     return true;
@@ -175,8 +175,6 @@ namespace Socopec.Controllers
                 else
                     return false;
             }
-
-
         }
     }
 }

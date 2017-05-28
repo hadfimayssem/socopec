@@ -91,6 +91,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AgenceController.cs" />
     <Compile Include="Controllers\EtatController.cs" />
+    <Compile Include="Controllers\HistoriqueController.cs" />
+    <Compile Include="Controllers\ModeleController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Controllers\VehiculeController.cs" />
     <Compile Include="Global.asax.cs">
