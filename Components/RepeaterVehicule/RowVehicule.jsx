@@ -31,7 +31,7 @@ class RowVehicule extends React.Component {
     return (
         <div>
             <div id = {"rowVehicule-"+this.props.cle}>
-                <span className="identifiant"> {this.props.vehicule.id} </span> 
+                <span className="identifiant"> {this.props.vehicule.id.toUpperCase()} </span> 
                 <span className="modele"> Modèle: {this.props.vehicule.modele} </span> 
                 <span className="etat"> Statut: {this.props.vehicule.etat} </span>
                 <span className={arrow} data-id={this.props.cle}  onClick={this.onClick.bind(this)}></span>

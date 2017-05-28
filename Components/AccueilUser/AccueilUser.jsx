@@ -6,10 +6,26 @@ var RepeaterVehicule = require('../RepeaterVehicule/RepeaterVehicule.jsx');
 require('./AccueilUser.css');
 
 class AccueilUser extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            vehicule: VEHICULES
+        }
+    }
     render () {
+        var data;
+        if(this.props.filtreRecherche != ""){           
+            data = this.state.vehicule.filter((d)=>
+             d.id.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) ||
+             d.modele.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) ||
+             d.etat.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) 
+             );
+        }else{
+            data = this.state.vehicule
+        }
         return (
             <div className="Accueil-backgound">
-                <RepeaterVehicule data={VEHICULES}/>
+                <RepeaterVehicule data={data}/>
             </div>
         );
     }

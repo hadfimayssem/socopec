@@ -11,11 +11,14 @@ var BtRecherche = require('./BtRecherche.jsx');
 var BtRechercheAdmin = require('./BtRechercheAdmin.jsx');
 
 class Menu extends React.Component{
+    constructor(props){
+        super(props);
+    }
     render(){
         return(
             <Router history={hashHistory}>
                 <Route path='/' component={MenuConnexion} />
-                <Route path='/accueil' component={MenuAccueilUser} />
+                <Route path="/accueil" component={() => (<MenuAccueilUser setRechercheUser={this.props.setRechercheUser} />)}/>
                 <Route path='/administration' component={MenuAccueilAdmin} />
             </Router>
         )
@@ -34,13 +37,16 @@ class MenuConnexion extends React.Component{
 }
 
 class MenuAccueilUser extends React.Component{
+    constructor(props){
+        super(props);
+    }
     render(){
         return(
             <div id="div-menu">
                 <Link to='/' style={{display: 'inline-block'}}><div id="img-logo"></div></Link> 
                 <div className ="verticalLine"></div>
                 <BtRecherche />
-                <input type="text" id="recherche-user" />
+                <input type="text" id="recherche-user" onChange={this.props.setRechercheUser} />
                 <BtAjoutVehicule />
                 <Link to='/' style={{display: 'inline-block'}}><div id="bt-user"></div></Link>
             </div>
