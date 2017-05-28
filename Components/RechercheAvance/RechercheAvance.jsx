@@ -23,33 +23,35 @@ class RechercheAvance extends React.Component{
         return(
                 <div id='recherche-avance'>
                     <h2>Recherche Avancée</h2>
-                    <label htmlFor="recherche-modele">Modèle:</label>
-                    <select name="recherche-modele">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
-                    </select>
-                    <label htmlFor="recherche-statut">Statut:</label>
-                    <select name="recherche-statut">
-                        <option value="loue">loué</option>
-                        <option value="toto">toto</option>
-                        <option value="rofl">Rofl</option>
-                        <option value="mop">Mop</option>
-                    </select>
-                    <label htmlFor="recherche-lieu">Lieu:</label>
-                    <select name="recherche-Lieu">
-                        <option value="foo">foo</option>
-                        <option value="toto">toto</option>
-                        <option value="rofl">Rofl</option>
-                        <option value="mop">Mop</option>
-                    </select>
+                    <form>
+                        <label htmlFor="recherche-modele">Modèle:</label>
+                        <select name="recherche-modele">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <label htmlFor="recherche-statut">Statut:</label>
+                        <select name="recherche-statut">
+                            <option value="loue">loué</option>
+                            <option value="toto">toto</option>
+                            <option value="rofl">Rofl</option>
+                            <option value="mop">Mop</option>
+                        </select>
+                        <label htmlFor="recherche-lieu">Lieu:</label>
+                        <select name="recherche-Lieu">
+                            <option value="foo">foo</option>
+                            <option value="toto">toto</option>
+                            <option value="rofl">Rofl</option>
+                            <option value="mop">Mop</option>
+                        </select>
+                    </form>
                     <InputRange
-                        maxValue={20}
-                        minValue={0}
-                        value={this.state.value}
-                        onChange={value => this.setState({ value })} 
-                    />
+                            maxValue={20}
+                            minValue={0}
+                            value={this.state.value}
+                            onChange={value => this.setState({ value })} 
+                        />
                 </div>
         )
     }

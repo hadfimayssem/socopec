@@ -1,31 +1,25 @@
 
 .details-img{
-    width: 200;
+    width: 200px;
     height: 200px;
     background-image: url('../../assets/images/placeholder.jpg');
     background-size: cover;
-    margin-left: 15px;
-    margin-top: 15px;
 }
 
 .details-infos{
-    height: 200px;
     width: 300px; 
     margin-left: 85px;
     font-size: 1.5em !important;
     line-height: 60px;
-    margin-top: 15px;
 }
 .details-buttons{
     margin-left: auto;
-    margin-right: 20px;
 }
 .details-edit{
     background-image: url('../../assets/images/edit.png');
     background-size: cover;
     width: 60px;
     height: 60px;
-    margin-top: 15px;
 }
 .details-historique{
     background-image: url('../../assets/images/history.png');
@@ -37,16 +31,14 @@
 .wrapper-details{
     display: flex;
     width:100%;
-    height: 230px;
 }
 .historique{
     height:200px;
     max-width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    background-color: lightgrey;
-    overflow: scroll;
+    background-color: #D8D081;
+    overflow-y: scroll;
+    padding: 15px;
+    margin-top: 15px;
 }
 .row-details{
     font-size: 1.2em;
