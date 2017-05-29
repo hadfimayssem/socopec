@@ -9,7 +9,7 @@ class RechercheAvance extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            value: { min: 2, max: 10 },
+            value: { min: 1, max: 4},
         };
     }
     handleClickOutside() {
@@ -20,34 +20,39 @@ class RechercheAvance extends React.Component{
     // }
 
     render(){
+        console.log(this.props.setRechercheAvanceUser);
         return(
                 <div id='recherche-avance'>
                     <h2>Recherche Avancée</h2>
                     <form>
                         <label htmlFor="recherche-modele">Modèle:</label>
-                        <select name="recherche-modele">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="fiat">Fiat</option>
-                            <option value="audi">Audi</option>
+                        <select name="recherche-modele" onChange={this.props.setRechercheAvanceUser}>
+                            <option value="">Aucun</option>
+                            <option value="Citroene">Citroene</option>
+                            <option value="Opel">Opel</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Fiesta">Fiesta</option>
+                            <option value="Ferari">Ferari</option>
+                            <option value="Renault">Renault</option>
                         </select>
                         <label htmlFor="recherche-statut">Statut:</label>
-                        <select name="recherche-statut">
-                            <option value="loue">loué</option>
-                            <option value="toto">toto</option>
-                            <option value="rofl">Rofl</option>
-                            <option value="mop">Mop</option>
+                        <select name="recherche-statut" onChange={this.props.setRechercheAvanceUser}>
+                            <option value="">Aucun</option>
+                            <option value="Loue">Loue</option>
+                            <option value="Garage">Garage</option>
+                            <option value="En reperation">En reperation</option>
+                            <option value="En attente">En attente</option>
                         </select>
                         <label htmlFor="recherche-lieu">Lieu:</label>
-                        <select name="recherche-Lieu">
-                            <option value="foo">foo</option>
-                            <option value="toto">toto</option>
-                            <option value="rofl">Rofl</option>
-                            <option value="mop">Mop</option>
+                        <select name="recherche-lieu" onChange={this.props.setRechercheAvanceUser}>
+                            <option value="">Aucun</option>
+                            <option value="Nancy">Nancy</option>
+                            <option value="Strasbourg">Strasbourg</option>
                         </select>
                     </form>
+                    <label>Hauteur (en mètre)</label>
                     <InputRange
-                            maxValue={20}
+                            maxValue={6}
                             minValue={0}
                             value={this.state.value}
                             onChange={value => this.setState({ value })} 

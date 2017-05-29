@@ -26,3 +26,10 @@
 	color: #344C85;
 	margin-bottom: 15px;
 }
+.input-range{
+    margin-top:25px !important;
+}
+.input-range__label {
+    font-size: 18px !important;
+    color: black !important;
+}

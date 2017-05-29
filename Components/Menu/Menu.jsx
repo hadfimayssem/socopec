@@ -18,7 +18,7 @@ class Menu extends React.Component{
         return(
             <Router history={hashHistory}>
                 <Route path='/' component={MenuConnexion} />
-                <Route path="/accueil" component={() => (<MenuAccueilUser setRechercheUser={this.props.setRechercheUser} />)}/>
+                <Route path="/accueil" component={() => (<MenuAccueilUser setRechercheUser={this.props.setRechercheUser}  setRechercheAvanceUser={this.props.setRechercheAvanceUser}/>)}/>
                 <Route path='/administration' component={MenuAccueilAdmin} />
             </Router>
         )
@@ -45,7 +45,7 @@ class MenuAccueilUser extends React.Component{
             <div id="div-menu">
                 <Link to='/' style={{display: 'inline-block'}}><div id="img-logo"></div></Link> 
                 <div className ="verticalLine"></div>
-                <BtRecherche />
+                <BtRecherche setRechercheAvanceUser = {this.props.setRechercheAvanceUser} />
                 <input type="text" id="recherche-user" onChange={this.props.setRechercheUser} />
                 <BtAjoutVehicule />
                 <Link to='/' style={{display: 'inline-block'}}><div id="bt-user"></div></Link>

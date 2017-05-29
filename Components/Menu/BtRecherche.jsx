@@ -23,7 +23,7 @@ class BtRecherche extends React.Component{
             <div id="wrapper-bt-recherche">
                 <div id="bt-recherche" onClick={this.onClick.bind(this)}> </div>
                 <Toggle hidden={this.state.hidden}>
-                        <RechercheAvance closeRecherche={this.onClick} />
+                        <RechercheAvance closeRecherche={this.onClick} setRechercheAvanceUser={this.props.setRechercheAvanceUser}/>
                 </Toggle>
             </div>
         )

@@ -13,28 +13,49 @@ class App extends React.Component{
     super(props);
     // this.setRechercheUser = this.setRechercheUser.bind(this);
     this.state = {
-      rechercheAvanceUser : [{model:"",statut:"", lieu:"", hauteur:""}],
-      rechercheUser: ""
+        rechercheAvanceUser : [{model:"",statut:"", lieu:"", hauteurMin:"", hauteurMax:""}],
+        rechercheUser: ""
+      }
     }
-  }
-setRechercheUser(e){
-  this.setState({
-    rechercheUser: e.target.value
-  })
-}
+    setRechercheUser(e){
+      this.setState({
+        rechercheUser: e.target.value
+      })
+    }
+    setRechercheAvanceUser(e){
 
-  render() {
-    return (
-      <div>     
-        <Menu setRechercheUser={this.setRechercheUser.bind(this)}/>
-        <Router history={hashHistory}>
-            <Route path='/' component={Connexion} />
-            <Route path='/accueil' component={()=> (<AccueilUser filtreRecherche = {this.state.rechercheUser} />)} />
-            <Route path='/administration' component={()=> (<AccueilAdmin />)} />
-        </Router>
-      </div>     
-    );
-  }
+      if(e.target.name == "recherche-modele"){
+        this.state.rechercheAvanceUser[0].model = e.target.value;
+      }
+      else if(e.target.name == "recherche-statut"){
+        this.state.rechercheAvanceUser[0].statut = e.target.value;
+      }
+      else if(e.target.name == "recherche-lieu"){
+        this.state.rechercheAvanceUser[0].lieu = e.target.value;
+      }
+      this.forceUpdate()
+    }
+    clearRechercheAvanceUser(){
+      this.setState({
+        rechercheAvanceUser: [{model:"",statut:"", lieu:"", hauteurMin:"", hauteurMax:""}]
+      })
+    }
+
+    render() {
+      return (
+        <div>     
+          <Menu 
+            setRechercheUser={this.setRechercheUser.bind(this)} 
+            setRechercheAvanceUser={this.setRechercheAvanceUser.bind(this)}
+          />
+          <Router history={hashHistory}>
+              <Route path='/' component={Connexion} />
+              <Route path='/accueil' component={()=> (<AccueilUser filtreRecherche = {this.state.rechercheUser} filtreRechercheAvance= {this.state.rechercheAvanceUser} />)} />
+              <Route path='/administration' component={()=> (<AccueilAdmin />)} />
+          </Router>
+        </div>     
+      );
+    }
 }
 
 module.exports = App;

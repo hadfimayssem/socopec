@@ -16,12 +16,21 @@ class AccueilUser extends React.Component{
         var data;
         if(this.props.filtreRecherche != ""){           
             data = this.state.vehicule.filter((d)=>
-             d.id.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) ||
-             d.modele.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) ||
-             d.etat.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) 
+                d.id.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) ||
+                d.modele.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) ||
+                d.etat.toUpperCase().includes(this.props.filtreRecherche.toUpperCase()) 
              );
         }else{
             data = this.state.vehicule
+        }
+        if(this.props.filtreRechercheAvance[0].model != ""){
+            data = this.state.vehicule.filter((d)=> d.modele.toUpperCase().includes(this.props.filtreRechercheAvance[0].model.toUpperCase()))
+        }
+        if(this.props.filtreRechercheAvance[0].statut != ""){
+            data = this.state.vehicule.filter((d)=> d.etat.toUpperCase().includes(this.props.filtreRechercheAvance[0].statut.toUpperCase()))
+        }
+        if(this.props.filtreRechercheAvance[0].lieu != ""){
+            data = this.state.vehicule.filter((d)=> d.lieux.toUpperCase().includes(this.props.filtreRechercheAvance[0].lieu.toUpperCase()))
         }
         return (
             <div className="Accueil-backgound">

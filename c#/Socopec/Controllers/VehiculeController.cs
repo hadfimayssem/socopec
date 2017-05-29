@@ -76,7 +76,7 @@ namespace Socopec.Controllers
             public VehiculePersistance()
             {
                 string myConnectionString;
-                myConnectionString = "SERVER=127.0.0.1; DATABASE=socopec; UID=root; PASSWORD=rootroot";
+                myConnectionString = "SERVER=127.0.0.1; DATABASE=socopec; UID=root; PASSWORD=1234";
                 try
                 {
                     conn = new MySql.Data.MySqlClient.MySqlConnection();
