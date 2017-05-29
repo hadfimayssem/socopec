@@ -10,11 +10,12 @@ class RepeaterVehicule extends React.Component {
          
      }
      render () {
-         var data = this.props.data
+         var data = this.props.data;
+         var self = this;
         return (
             <div>
             {data.map(function(data, i){
-                return <RowVehicule vehicule={data} key={i} cle={i} />;
+                return <RowVehicule addData={self.props.addData} vehicule={data} key={i} cle={i} />;
             })}
             </div>
         );

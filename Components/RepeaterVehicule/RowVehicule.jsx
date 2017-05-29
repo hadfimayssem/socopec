@@ -36,7 +36,7 @@ class RowVehicule extends React.Component {
                 <span className="etat"> Statut: {this.props.vehicule.etat} </span>
                 <span className={arrow} data-id={this.props.cle}  onClick={this.onClick.bind(this)}></span>
             </div>
-            <Toggle hidden={this.state.hidden}><VoletDetails data={this.props.vehicule}/></Toggle>
+            <Toggle hidden={this.state.hidden}><VoletDetails addData={this.props.addData} data={this.props.vehicule}/></Toggle>
 
         </div>
     )

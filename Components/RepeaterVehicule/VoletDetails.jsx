@@ -29,7 +29,7 @@ class VoletDetails extends React.Component{
                     </div>
                     <div className="details-infos">
                         <div className="details-poids">Poids: {this.props.data.poids} t </div>
-                        <div className="details-puissance">Puissance: {this.props.data.puissance} </div>
+                        <div className="details-puissance">Puissance: {this.props.data.puissance} ch</div>
                         <div className="details-lieux">Lieux: {this.props.data.lieux} </div>
                     </div>
                     <div className="details-buttons">
@@ -40,7 +40,7 @@ class VoletDetails extends React.Component{
                 <div className="historique"><RowDetails historique ={"ceci est une ligne d'historique"}/></div>
                 <Toggle hidden={this.state.hidden}>
                     <div id='ajout-vehicule-overlay'>
-                        <ModifVehicule closePopup={this.onClick} />
+                        <ModifVehicule addData ={this.props.addData} closePopup={this.onClick} data={this.props.data} />
                     </div>
                 </Toggle>
             </div>
