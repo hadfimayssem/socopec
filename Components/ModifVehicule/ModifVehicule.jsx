@@ -16,6 +16,7 @@ class ModifVehicule extends React.Component{
             hauteur: "",
             largeur: "",
             puissance: "",
+            lieu: ""
         }
     }
     handleChangeType(e) {
@@ -44,6 +45,9 @@ class ModifVehicule extends React.Component{
     }
     handleChangePuissance(e) {
         this.setState({puissance: e.target.value});
+    }
+    handleChangeLieu(e) {
+        this.setState({lieu: e.target.value})
     }
             
 
@@ -94,6 +98,10 @@ class ModifVehicule extends React.Component{
              data.puissance = this.state.puissance;
              data.historique.push("Puissance modifié en " + this.state.puissance + "cv le " + today);
          }
+         if(this.state.lieu != ""){
+             data.lieux = this.state.lieu;
+             data.historique.push("Lieu modifié en " + this.state.lieu + " le " + today);
+         }
          data.type = "vehicule";
         this.props.addData(data);
         this.props.closePopup();
@@ -116,7 +124,9 @@ class ModifVehicule extends React.Component{
                         <label htmlFor="modif-poids">Poids:</label>
                         <input id="modif-poids" onChange={this.handleChangePoids.bind(this)}  type="text" />   
                         <label htmlFor="modif-puissance">Puissance:</label>
-                        <input id="modif-puissace" onChange={this.handleChangePuissance.bind(this)} type="text" />  
+                        <input id="modif-puissace" onChange={this.handleChangePuissance.bind(this)} type="text" />
+                        <label htmlFor="modif-lieu">Lieu:</label>
+                        <input id="modif-lieu" onChange={this.handleChangeLieu.bind(this)} type="text" />   
                     </form>
                     <div className="buttons">
                         <div id="modif-valider" onClick = {this.validerModif.bind(this)}></div>

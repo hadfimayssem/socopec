@@ -66,7 +66,7 @@ class AjoutVehicule extends React.Component{
             tempData.hauteur = this.state.hauteur;
             tempData.largeur = this.state.largeur;
             tempData.puissance = this.state.puissance;
-            tempData.lieu = this.state.lieu;
+            tempData.lieux = this.state.lieu;
             tempData.type = "vehicule";
             
             var today = new Date();

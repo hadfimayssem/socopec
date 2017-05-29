@@ -35,7 +35,6 @@ class VoletDetails extends React.Component{
                     </div>
                     <div className="details-buttons">
                         <div className="details-edit" onClick={this.onClick.bind(this)}></div>
-                        <div className="details-historique"></div>
                     </div>
                 </div>
                 <div className="historique">
