@@ -43,4 +43,6 @@
 .row-details{
     font-size: 1.2em;
     width: 100%;
+    display: block;
+    margin-top: 10px;
 }

@@ -36,6 +36,7 @@ class AccueilUser extends React.Component{
             temp[index].largeur = data.largeur;
             temp[index].puissance = data.puissance;
             temp[index].lieux = data.lieux;
+            temp[index].historique = data.historique
         }else{
             temp.push(data)
         }
@@ -73,12 +74,18 @@ class AccueilUser extends React.Component{
     }
 }
 var VEHICULES = [
-  {type: "vehicule", id: 'XX6YT', modele: 'Citroene', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2.5, largeur: 1.5, puissance: "20", lieux:"nancy" },
-  {type: "vehicule", id: 'PTZD8', modele: 'Opel', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 3, largeur: 1.5, puissance: "50", lieux:"nancy"},
-  {type: "vehicule", id: 'DS87T', modele: 'Peugeot', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "15", lieux:"nancy"},
-  {type: "vehicule", id: 'RRSQP', modele: 'Fiesta', etat: 'En reparation', fabrication: '12/10/2008', poids: 1.5, hauteur: 1.5, largeur: 1.5, puissance: "60", lieux:"nancy"},
-  {type: "vehicule", id: 'H13RE', modele: 'Ferari', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "30", lieux:"nancy"},
-  {type: "vehicule", id: 'DORK3', modele: 'Renault', etat: 'En attente', fabrication: '12/10/2008', poids: 3.5, hauteur: 2.5, largeur: 1.5, puissance: "40", lieux:"nancy"}
+  {type: "vehicule", id: 'XX6YT', modele: 'Citroene', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2.5, largeur: 1.5, puissance: "20", lieux:"nancy", historique: ["Ajouté en base le 03/05/2017", "Etat modifié en loué le 04/05/2017","Etat modifié en garage le 04/05/2017", "Etat modifié en loué le 04/05/2017","Etat modifié en garage le 04/05/2017", "Etat modifié en loué le 04/05/2017","Etat modifié en garage le 04/05/2017", "Etat modifié en loué le 04/05/2017","Etat modifié en garage le 04/05/2017", "Etat modifié en loué le 04/05/2017","Etat modifié en garage le 04/05/2017", "Etat modifié en loué le 04/05/2017","Etat modifié en garage le 04/05/2017"]},
+  {type: "vehicule", id: 'PTZD8', modele: 'Opel', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 3, largeur: 1.5, puissance: "50", lieux:"nancy", historique: ["Ajouté en base le 03/05/2017"]},
+  {type: "vehicule", id: 'DS87T', modele: 'Peugeot', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "15", lieux:"nancy", historique: ["Ajouté en base le 03/05/2017"]},
+  {type: "vehicule", id: 'RRSQP', modele: 'Fiesta', etat: 'En reparation', fabrication: '12/10/2008', poids: 1.5, hauteur: 1.5, largeur: 1.5, puissance: "60", lieux:"nancy", historique: ["Ajouté en base le 03/05/2017"]},
+  {type: "vehicule", id: 'H13RE', modele: 'Ferari', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "30", lieux:"nancy", historique: ["Ajouté en base le 03/05/2017"]},
+  {type: "vehicule", id: 'DORK3', modele: 'Renault', etat: 'En attente', fabrication: '12/10/2008', poids: 3.5, hauteur: 2.5, largeur: 1.5, puissance: "40", lieux:"nancy", historique: ["Ajouté en base le 03/05/2017"]},
+  {type: "vehicule", id: 'KKAR4', modele: 'Citroene', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2.5, largeur: 1.5, puissance: "20", lieux:"strasbourg", historique: ["Ajouté en base le 25/05/2017"]},
+  {type: "vehicule", id: 'B8B8A', modele: 'Opel', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 3, largeur: 1.5, puissance: "50", lieux:"strasbourg", historique: ["Ajouté en base le 25/05/2017"]},
+  {type: "vehicule", id: 'DARF2', modele: 'Peugeot', etat: 'Loue', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "15", lieux:"strasbourg", historique: ["Ajouté en base le 25/05/2017"]},
+  {type: "vehicule", id: 'CLART', modele: 'Fiesta', etat: 'En reparation', fabrication: '12/10/2008', poids: 1.5, hauteur: 1.5, largeur: 1.5, puissance: "60", lieux:"strasbourg", historique: ["Ajouté en base le 25/05/2017"]},
+  {type: "vehicule", id: 'MTF2G', modele: 'Ferari', etat: 'Garage', fabrication: '12/10/2008', poids: 3.5, hauteur: 2, largeur: 1.5, puissance: "30", lieux:"strasbourg", historique: ["Ajouté en base le 25/05/2017"]},
+  {type: "vehicule", id: '55PAR', modele: 'Renault', etat: 'En attente', fabrication: '12/10/2008', poids: 3.5, hauteur: 2.5, largeur: 1.5, puissance: "40", lieux:"strasbourg", historique: ["Ajouté en base le 25/05/2017"]}
 ];
 
 module.exports = AccueilUser;

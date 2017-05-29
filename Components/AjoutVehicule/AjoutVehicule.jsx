@@ -54,7 +54,7 @@ class AjoutVehicule extends React.Component{
         this.props.closePopup();
     }
     validerAjout(){ 
-         var tempData = {type:"", id: "", modele:"",etat:"",fabrication:"",poids:"",hauteur:"",largeur:"",puissance:"", lieu:""};
+         var tempData = {type:"", id: "", modele:"",etat:"",fabrication:"",poids:"",hauteur:"",largeur:"",puissance:"", lieu:"",historique:[]};
          if(this.state.modele != "" && this.state.etat != "" && this.state.fabrication != "" &&
              this.state.poids != "" && this.state.hauteur != "" && this.state.largeur != "" &&
               this.state.puissance != "" && this.state.id != ""  && this.state.lieu != ""){
@@ -68,6 +68,21 @@ class AjoutVehicule extends React.Component{
             tempData.puissance = this.state.puissance;
             tempData.lieu = this.state.lieu;
             tempData.type = "vehicule";
+            
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if(dd<10) {
+                dd='0'+dd
+            } 
+
+            if(mm<10) {
+                mm='0'+mm
+            } 
+            today = dd+'/'+mm+'/'+yyyy;
+            tempData.historique.push("Ajouté en base le "+today)
             this.props.addVehicule(tempData);
             this.props.closePopup();
          }

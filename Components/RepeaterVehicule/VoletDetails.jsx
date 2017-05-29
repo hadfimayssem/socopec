@@ -18,6 +18,7 @@ class VoletDetails extends React.Component{
         })) 
     }
     render(){
+        var historique = this.props.data.historique.reverse();
         return(
             <div className="volet-details">
                 <div className="wrapper-details">
@@ -37,7 +38,11 @@ class VoletDetails extends React.Component{
                         <div className="details-historique"></div>
                     </div>
                 </div>
-                <div className="historique"><RowDetails historique ={"ceci est une ligne d'historique"}/></div>
+                <div className="historique">
+                    {historique.map(function(historique, i){
+                        return <RowDetails historique={historique} key={i} />;
+                    })}
+                </div>
                 <Toggle hidden={this.state.hidden}>
                     <div id='ajout-vehicule-overlay'>
                         <ModifVehicule addData ={this.props.addData} closePopup={this.onClick} data={this.props.data} />

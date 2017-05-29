@@ -52,26 +52,47 @@ class ModifVehicule extends React.Component{
     }
     validerModif(){ 
          var data = this.props.data;
+         var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd='0'+dd
+        } 
+
+        if(mm<10) {
+            mm='0'+mm
+        } 
+        today = dd+'/'+mm+'/'+yyyy;
+
          if(this.state.modele != ""){
              data.modele = this.state.modele;
+             data.historique.push("Modèle modifié en " + this.state.modele + " le " + today);
          }
          if(this.state.etat != ""){
              data.etat = this.state.etat;
+             data.historique.push("Etat modifié en " + this.state.etat + " le " + today);
          }
          if(this.state.fabrication != ""){
              data.fabrication = String(this.state.fabrication);
+             data.historique.push("Date de frabrication modifié en " + String(this.state.fabrication) + " le " + today);
          }
          if(this.state.poids != ""){
              data.poids = this.state.poids;
+             data.historique.push("Poids modifié en " + this.state.poids + "t le " + today);
          }
          if(this.state.hauteur != ""){
              data.hauteur = this.state.hauteur;
+             data.historique.push("Hauteur modifié en " + this.state.hauteur + "m le " + today);
          }
          if(this.state.largeur != ""){
              data.largeur = this.state.largeur;
+             data.historique.push("Largeur modifié en " + this.state.largeur + "m le " + today);
          }
          if(this.state.puissance != ""){
              data.puissance = this.state.puissance;
+             data.historique.push("Puissance modifié en " + this.state.puissance + "cv le " + today);
          }
          data.type = "vehicule";
         this.props.addData(data);
