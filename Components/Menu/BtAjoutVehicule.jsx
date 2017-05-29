@@ -24,7 +24,7 @@ class BtAjoutVehicule extends React.Component{
                 <div id="bt-ajout-vehicule" onClick={this.onClick.bind(this)}> </div>
                 <Toggle hidden={this.state.hidden}>
                     <div id='ajout-vehicule-overlay'>
-                        <AjoutVehicule closePopup={this.onClick} />
+                        <AjoutVehicule addVehicule={this.props.addVehicule} closePopup={this.onClick} />
                     </div>
                 </Toggle>
             </div>

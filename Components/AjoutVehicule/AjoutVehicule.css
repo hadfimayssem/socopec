@@ -6,6 +6,7 @@
     background-color: white;
     z-index: 1000;
     padding: 25px;
+    overflow-y: scroll;
 }
 #ajout-vehicule > form{
     display: flex;

@@ -26,6 +26,10 @@ class App extends React.Component{
       this.forceUpdate();
       location.reload();
     }
+    addVehicule(data){
+      this.child.addData(data);
+    }
+    
     setRechercheAvanceUser(e, minHauteur, maxHauteur){
 
       if(e){
@@ -60,12 +64,13 @@ class App extends React.Component{
       return (
         <div>     
           <Menu 
-            setRechercheUser={this.setRechercheUser.bind(this)} 
+            setRechercheUser={this.setRechercheUser.bind(this)}
+            addVehicule ={this.addVehicule.bind(this)} 
             setRechercheAvanceUser={this.setRechercheAvanceUser.bind(this)}
           />
           <Router history={hashHistory}>
               <Route path='/'  history={hashHistory} component={()=> (<Connexion navigate = {this.navigate.bind(this)} />)} />
-              <Route path='/accueil' component={()=> (<AccueilUser filtreRecherche = {this.state.rechercheUser} filtreRechercheAvance= {this.state.rechercheAvanceUser} />)} />
+              <Route path='/accueil' component={()=> (<AccueilUser  onRef={ref => (this.child = ref)} filtreRecherche = {this.state.rechercheUser} filtreRechercheAvance= {this.state.rechercheAvanceUser} />)} />
               <Route path='/administration' component={()=> (<AccueilAdmin />)} />
           </Router>
         </div>     

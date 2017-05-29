@@ -6,6 +6,17 @@ var RepeaterVehicule = require('../RepeaterVehicule/RepeaterVehicule.jsx');
 require('./AccueilUser.css');
 
 class AccueilUser extends React.Component{
+   componentDidMount() {
+    this.props.onRef(this)
+  }
+  componentWillUnmount() {
+    this.props.onRef(undefined)
+  }
+   getInitialState() {
+    return {
+      isHidden: false
+    };
+  }
     constructor(props){
         super(props);
         this.state = {
