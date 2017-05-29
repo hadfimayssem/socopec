@@ -11,7 +11,6 @@ var AccueilAdmin = require('../AccueilAdmin/AccueilAdmin.jsx');
 class App extends React.Component{
   constructor(props){
     super(props);
-    // this.setRechercheUser = this.setRechercheUser.bind(this);
     this.state = {
         rechercheAvanceUser : [{model:"",statut:"", lieu:"", hauteurMin:"", hauteurMax:""}],
         rechercheUser: ""
@@ -22,18 +21,31 @@ class App extends React.Component{
         rechercheUser: e.target.value
       })
     }
-    setRechercheAvanceUser(e){
-
-      if(e.target.name == "recherche-modele"){
-        this.state.rechercheAvanceUser[0].model = e.target.value;
+    setRechercheAvanceUser(e, minHauteur, maxHauteur){
+      console.log(e);
+      console.log(minHauteur);
+      console.log(maxHauteur);
+      if(e){
+        if(e.target.name == "recherche-modele"){
+          this.state.rechercheAvanceUser[0].model = e.target.value;
+        }
+        else if(e.target.name == "recherche-statut"){
+          this.state.rechercheAvanceUser[0].statut = e.target.value;
+        }
+        else if(e.target.name == "recherche-lieu"){
+          this.state.rechercheAvanceUser[0].lieu = e.target.value;
+        }
+        this.forceUpdate();
+      }else{
+        if(typeof(minHauteur) != 'undefined'){
+          this.state.rechercheAvanceUser[0].hauteurMin = minHauteur;
+        }
+        if(typeof(maxHauteur) != 'undefined'){
+          this.state.rechercheAvanceUser[0].hauteurMax = maxHauteur;
+        }
+        this.forceUpdate();
       }
-      else if(e.target.name == "recherche-statut"){
-        this.state.rechercheAvanceUser[0].statut = e.target.value;
-      }
-      else if(e.target.name == "recherche-lieu"){
-        this.state.rechercheAvanceUser[0].lieu = e.target.value;
-      }
-      this.forceUpdate()
+      
     }
     clearRechercheAvanceUser(){
       this.setState({

@@ -9,18 +9,18 @@ class RechercheAvance extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            value: { min: 1, max: 4},
+            value: { min: 0, max: 6},
         };
     }
     handleClickOutside() {
         this.props.closeRecherche();
     }
-    // validerRecherche(){
-    //     this.props.closePopup();
-    // }
+    handleSlide() {
+        console.log(this.props.setRechercheAvanceUser);
+        this.props.setRechercheAvanceUser(false, this.state.value.min, this.state.value.max);
+    }
 
     render(){
-        console.log(this.props.setRechercheAvanceUser);
         return(
                 <div id='recherche-avance'>
                     <h2>Recherche Avancée</h2>
@@ -56,6 +56,7 @@ class RechercheAvance extends React.Component{
                             minValue={0}
                             value={this.state.value}
                             onChange={value => this.setState({ value })} 
+                            onChangeComplete={this.handleSlide.bind(this)}
                         />
                 </div>
         )
