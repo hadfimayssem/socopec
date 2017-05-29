@@ -16,7 +16,6 @@ class RechercheAvance extends React.Component{
         this.props.closeRecherche();
     }
     handleSlide() {
-        console.log(this.props.setRechercheAvanceUser);
         this.props.setRechercheAvanceUser(false, this.state.value.min, this.state.value.max);
     }
 

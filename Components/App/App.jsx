@@ -21,10 +21,13 @@ class App extends React.Component{
         rechercheUser: e.target.value
       })
     }
+    navigate(url){
+      browserHistory.push(url);
+      this.forceUpdate();
+      location.reload();
+    }
     setRechercheAvanceUser(e, minHauteur, maxHauteur){
-      console.log(e);
-      console.log(minHauteur);
-      console.log(maxHauteur);
+
       if(e){
         if(e.target.name == "recherche-modele"){
           this.state.rechercheAvanceUser[0].model = e.target.value;
@@ -61,7 +64,7 @@ class App extends React.Component{
             setRechercheAvanceUser={this.setRechercheAvanceUser.bind(this)}
           />
           <Router history={hashHistory}>
-              <Route path='/' component={Connexion} />
+              <Route path='/'  history={hashHistory} component={()=> (<Connexion navigate = {this.navigate.bind(this)} />)} />
               <Route path='/accueil' component={()=> (<AccueilUser filtreRecherche = {this.state.rechercheUser} filtreRechercheAvance= {this.state.rechercheAvanceUser} />)} />
               <Route path='/administration' component={()=> (<AccueilAdmin />)} />
           </Router>
