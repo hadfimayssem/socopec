@@ -55,16 +55,16 @@ class AccueilUser extends React.Component{
             data = this.state.vehicule
         }
         if(this.props.filtreRechercheAvance[0].model != ""){
-            data = this.state.vehicule.filter((d)=> d.modele.toUpperCase().includes(this.props.filtreRechercheAvance[0].model.toUpperCase()))
+            data = data.filter((d)=> d.modele.toUpperCase().includes(this.props.filtreRechercheAvance[0].model.toUpperCase()))
         }
         if(this.props.filtreRechercheAvance[0].statut != ""){
-            data = this.state.vehicule.filter((d)=> d.etat.toUpperCase().includes(this.props.filtreRechercheAvance[0].statut.toUpperCase()))
+            data = data.filter((d)=> d.etat.toUpperCase().includes(this.props.filtreRechercheAvance[0].statut.toUpperCase()))
         }
         if(this.props.filtreRechercheAvance[0].lieu != ""){
-            data = this.state.vehicule.filter((d)=> d.lieux.toUpperCase().includes(this.props.filtreRechercheAvance[0].lieu.toUpperCase()))
+            data = data.filter((d)=> d.lieux.toUpperCase().includes(this.props.filtreRechercheAvance[0].lieu.toUpperCase()))
         }
         if(this.props.filtreRechercheAvance[0].hauteurMin !="" && this.props.filtreRechercheAvance[0].hauteurMax != ""){
-            data = this.state.vehicule.filter((d)=> d.hauteur >= parseFloat(this.props.filtreRechercheAvance[0].hauteurMin) && d.hauteur <= parseFloat(this.props.filtreRechercheAvance[0].hauteurMax))
+            data = data.filter((d)=> d.hauteur >= parseFloat(this.props.filtreRechercheAvance[0].hauteurMin) && d.hauteur <= parseFloat(this.props.filtreRechercheAvance[0].hauteurMax))
         }
         return (
             <div className="Accueil-backgound">
